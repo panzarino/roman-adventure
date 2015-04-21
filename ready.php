@@ -46,7 +46,8 @@
             <div id="newname"></div>
             <script>
                 function newname(){
-                    var html = '<form class="form-inline" action="ready.php" method="get"><div class="form-group"><label for="name">Name</label><input type="text" class="form-control" id="name" name="name" placeholder="Julius Caesar" required autofocus></div><button type="submit" class="btn btn-default">Submit</button><br><br><p><a onClick="cancelnewname()">Cancel</a></p></form>';
+                    var nameValue = document.getElementById("name").value;
+                    var html = '<form class="form-inline" action="ready.php" method="get"><div class="form-group"><label for="name">Name</label><input type="text" class="form-control" id="name" name="name" placeholder="'+nameValue+'" required autofocus></div><button type="submit" class="btn btn-default">Submit</button><br><br><p><a onClick="cancelnewname()">Cancel</a></p></form>';
                     document.getElementById("newname").innerHTML = html;
                 }
                 function cancelnewname(){
@@ -55,6 +56,7 @@
             </script>
             <?php
             echo "<br><br><h3>Your first task is to choose an occupation.<br>Select a job from the options below.<h3>";
+            echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
             echo '<form class="form-inline" action="soldier.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<button type="submit" class="btn btn-default">Soldier</button></form><br>';
