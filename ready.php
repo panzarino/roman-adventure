@@ -38,16 +38,34 @@
     <header id="top" class="header" style="background: url(img/home.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
-            <h1>Welcome</h1>
-            <h3>Welcome to Roman Adventure<br>Enter your name to get started.</h3>
+            <?php
+            $name = $_GET['name'];
+            echo "<h1>Welcome ".$name."</h1>";
+            echo "<h3>Is ".$name.' correct? If not click <a onclick="newname()">here</a></h3>';
+            ?>
+            <div id="newname"></div>
+            <script>
+                function newname(){
+                    var html = '<form class="form-inline" action="ready.php" method="get"><div class="form-group"><label for="name">Name</label><input type="text" class="form-control" id="name" name="name" placeholder="Julius Caesar" required autofocus></div><button type="submit" class="btn btn-default">Submit</button><br><br><p><a onClick="cancelnewname()">Cancel</a></p></form>';
+                    document.getElementById("newname").innerHTML = html;
+                }
+                function cancelnewname(){
+                    document.getElementById("newname").innerHTML = "";
+                }
+            </script>
+            <?php
+            echo "<br><br><h3>Your first task is to choose an occupation.<br>Select a job from the options below.<h3>";
+            echo '<form class="form-inline" action="soldier.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<button type="submit" class="btn btn-default">Soldier</button></form><br>';
+            echo '<form class="form-inline" action="farmer.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<button type="submit" class="btn btn-default">Farmer</button></form><br>';
+            echo '<form class="form-inline" action="merchant.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<button type="submit" class="btn btn-default">Merchant</button></form><br>';
+            ?>
             <br>
-            <form class="form-inline">
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Julius Caesar" required autofocus>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
         </div>
     </header>
     <script src="js/jquery.js"></script>

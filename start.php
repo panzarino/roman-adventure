@@ -35,7 +35,7 @@
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/home.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/start.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
             <h1>Welcome</h1>
