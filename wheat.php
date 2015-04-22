@@ -35,38 +35,16 @@
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/home.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/icon.png" height="100px" width="100px">
+            <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<h1>Welcome ".$name."</h1>";
-            echo "<h3>Is ".$name.' correct? If not click <a onclick="newname()">here</a></h3>';
-            ?>
-            <div id="newname"></div>
-            <script>
-                function newname(){
-                    var nameValue = document.getElementById("name").value;
-                    var html = '<form class="form-inline" action="ready.php" method="get"><div class="form-group"><label for="name">Name</label><input type="text" class="form-control" id="name" name="name" placeholder="'+nameValue+'" required autofocus></div><button type="submit" class="btn btn-default">Submit</button><br><br><p><a onClick="cancelnewname()">Cancel</a></p></form>';
-                    document.getElementById("newname").innerHTML = html;
-                }
-                function cancelnewname(){
-                    document.getElementById("newname").innerHTML = "";
-                }
-            </script>
-            <?php
-            echo "<br><br><h3>Your first task is to choose an occupation.<br>Select a job from the options below.<h3>";
+            echo "<h3>Growing wheat is easy with all the animals and help that you get from your slaves.<br>You easily make a profit by selling it to merchants.<h3>";
             echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
-            echo '<form class="form-inline" action="soldier.php" method="get">';
+            echo '<form class="form-inline" action="farmwar1.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default">Soldier</button></form><br>';
-            echo '<form class="form-inline" action="farmer.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<input type="hidden" name="past" value="none">';
-            echo '<button type="submit" class="btn btn-default">Farmer</button></form><br>';
-            echo '<form class="form-inline" action="merchant.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default">Merchant</button></form><br>';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form>';
             ?>
             <br>
         </div>
