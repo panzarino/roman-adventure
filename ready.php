@@ -55,7 +55,7 @@
                 }
             </script>
             <?php
-            echo "<br><br><h3>Your first task is to choose an occupation.<br>Select a job from the options below.<h3>";
+            echo "<br><br><h3><mark>Your first task is to choose an occupation.<br><br>Select a job from the options below.</mark><h3>";
             echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
             echo '<form class="form-inline" action="soldier.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';

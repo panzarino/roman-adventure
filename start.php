@@ -39,7 +39,7 @@
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
             <h1>Welcome</h1>
-            <h3>Welcome to Roman Adventure<br>Enter your name to get started.</h3>
+            <h3><mark>Welcome to Roman Adventure<br><br>Enter your name to get started.</mark></h3>
             <br>
             <form class="form-inline" action="ready.php" method="get">
   <div class="form-group">

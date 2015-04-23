@@ -40,7 +40,7 @@
             <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<h3>The Roman Empire has been drawn into a major conflict.<br>Rome is at war!<br>The Roman Legion needs all the help that it can get for this war.<br>As a young man you should be helping the war effort.<br><br>Do you want to fight in the war?<h3>";
+            echo "<p style='font-size:20px'><mark>The Roman Empire has been drawn into a major conflict.<br>Rome is at war! The Roman Legion needs all the help that it can get for this war.<br>As a young man you should be helping the war effort.<br><br>Do you want to fight in the war?</mark></p>";
             echo '<form class="form-inline" action="soldier.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<button type="submit" class="btn btn-default">Become a Soldier</button></form><br>';

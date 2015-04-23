@@ -39,7 +39,7 @@
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
             <h1>Roman Adventure</h1>
-            <h3>Travel through Rome as a Roman citizen and make decisions that change the game.</h3>
+            <h3><mark>Travel through Rome as a Roman citizen and make decisions that change the game.</mark></h3>
             <br>
             <a href="start.php" class="btn btn-dark btn-lg">Play</a>
         </div>

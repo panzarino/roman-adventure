@@ -40,7 +40,7 @@
             <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<h3>Growing wheat is easy with all the animals and help that you get from your slaves.<br>You easily make a profit by selling it to merchants.<h3>";
+            echo "<p style='font-size:20px'><mark>Growing wheat is easy with all the animals and help that you get from your slaves.<br>You easily make a profit by selling it to merchants.</mark></p>";
             echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
             echo '<form class="form-inline" action="farmwar1.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';

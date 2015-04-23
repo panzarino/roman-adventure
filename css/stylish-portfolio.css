@@ -232,3 +232,8 @@ hr.small {
 footer {
     padding: 100px 0;
 }
+
+mark {
+    color:#181818;
+    background:#337ab7
+}

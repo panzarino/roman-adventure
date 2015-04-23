@@ -40,7 +40,7 @@
             <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<h3>Since you have decided not to fight in the war, your crops are needed to support the army.<br>The army does not compensate you for your crops, and they want to take 50% of your stockpile.<br>Do you give them the crops?<h3>";
+            echo "<p style='font-size:20px'><mark>\"".$name.", We need your crops for the war effort,\" says the soldier.<br><br>Since you have decided not to fight in the war, your crops are needed to support the army.<br>The army does not compensate you for your crops, and they want to take 50% of your stockpile.<br><br>Do you give them the crops?</mark></p>";
             echo '<form class="form-inline" action="goodfarmer.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<button type="submit" class="btn btn-default">Yes (Give them the Crops)</button></form><br>';

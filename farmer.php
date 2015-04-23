@@ -37,14 +37,14 @@
     </nav>
     <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/hoe.png" height="100px" width="100px">
+            <img src="img/hoe.png" height="100px" width="100px"><br>
             <?php
             $name = $_GET['name'];
             $past = $_GET['past'];
             if ($past==="none"){
-                echo "<h3>You have became a young farmer working for your father, one of the largest farmers in the area.<br>He has allocated a small part of his farm for you to grow crops on until you can afford to buy your own land.<br>You have been given 3 slaves to help tend your land.<br>He has also given you some animals.</h3><br><br>";
+                echo "<p style='font-size:20px'><mark>You have became a young farmer working for your father, one of the largest farmers in the area.<br>He has allocated a small part of his farm for you to grow crops on until you can afford to buy your own land.<br>You have been given 3 slaves to help tend your land.<br>He has also given you some animals.</mark></p><br><br>";
             }
-            echo "<h3>Your first task is to choose what crop to grow.<h3>";
+            echo "<h3><mark>Your first task is to choose what crop to grow.</mark><h3>";
             echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
             echo '<form class="form-inline" action="wheat.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
