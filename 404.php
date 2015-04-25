@@ -36,7 +36,7 @@
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
             <h1>404 Error</h1>
-            <h3>Something went wrong and you are not supposed to be here.<br>The page that you are trying to access does not exist<br><br><br>Click <a href="/">here</a> to return home or <a onClick="goBack()">here</a> to go back to the last page you were on.</h3>
+            <p style='font-size:20px'><mark>Something went wrong and you are not supposed to be here.<br>The page that you are trying to access does not exist<br><br><br>Click <a href="/" style="color:#fff;">here</a> to return home or <a onClick="goBack()" style="color:#fff;">here</a> to go back to the last page you were on.</mark></p>
             <br>
             <script>
                 function goBack() {
