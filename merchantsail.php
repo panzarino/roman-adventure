@@ -40,13 +40,35 @@
             <img src="img/vase.png" height="100px" width="100px"><br><br>
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>Now that you have decided to become a merchant, you need to name your ship.</mark></p>";
-            echo '<form class="form-inline" action="merchant2.php" method="get">';
+            $ship = $_GET['ship'];
+            $trips = $_GET['trips'];
+            $chances = $_GET['odds'];
+            if ($chances==="high"){
+                $odds = rand(1,3);
+            }
+            if ($chances==="medium"){
+                $odds = rand(1,4);
+            }
+            if ($chances==="low"){
+                $odds = rand(1,6);
+            }
+            if ($odds<=2){
+                echo "<p style='font-size:20px'><mark>Pirates attack the ".$ship."!<br>A pirate grabs you and ties you up.<br>\"".$name.", give me all your money\" says the pirate.<br><br>Do you give him the money?</mark></p>";
+            echo '<form class="form-inline" action="merchantpirateyes.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<div class="form-group">';
-            echo '<label for="name">Ship Name</label>';
-            echo '<input type="text" class="form-control" name="ship" required autofocus></div>';
-            echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            echo '<button type="submit" class="btn btn-default">Yes</button></form><br>';
+            echo '<form class="form-inline" action="merchantpirateno.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<button type="submit" class="btn btn-default">No</button></form><br>';
+            }
+            else{
+                echo "<p style='font-size:20px'><mark>No pirates attack you and you make a profit</mark></p>";
+                echo '<form class="form-inline" action="merchant2.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<input type="hidden" name="ship" value="'.$ship.'">';
+            echo '<input type="hidden" name="trips" value="'.$trips.'">';
+            echo '<button type="submit" class="btn btn-default">Return Home</button></form><br>';
+            }
             ?>
             <br>
         </div>

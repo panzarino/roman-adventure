@@ -44,6 +44,9 @@
             if ($past==="none"){
                 echo "<p style='font-size:20px'><mark>You have became a young farmer working for your father, one of the largest farmers in the area.<br>He has allocated a small part of his farm for you to grow crops on until you can afford to buy your own land.<br>You have been given 3 slaves to help tend your land.<br>He has also given you some animals.</mark></p><br><br>";
             }
+            if ($past==="merchant"){
+                echo "<p style='font-size:20px'><mark>With your profits from sailing you were able to buy a small farm</mark></p>";
+            }
             echo "<h3><mark>Your first task is to choose what crop to grow.</mark><h3>";
             echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
             echo '<form class="form-inline" action="wheat.php" method="get">';

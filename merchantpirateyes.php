@@ -40,13 +40,11 @@
             <img src="img/vase.png" height="100px" width="100px"><br><br>
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>Now that you have decided to become a merchant, you need to name your ship.</mark></p>";
+            echo "<p style='font-size:20px'><mark>The pirates take your money but they let you go.<br>They also took your crew, so you no longer have anyone to sail with.</mark></p>";
             echo '<form class="form-inline" action="merchant2.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<div class="form-group">';
-            echo '<label for="name">Ship Name</label>';
-            echo '<input type="text" class="form-control" name="ship" required autofocus></div>';
-            echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            echo '<input type="hidden" name="trips" value="10">';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
             ?>
             <br>
         </div>
