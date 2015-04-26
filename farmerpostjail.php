@@ -37,17 +37,14 @@
     </nav>
     <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/hoe.png" height="100px" width="100px">
+            <img src="img/hoe.png" height="100px" width="100px"><br>
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>\"".$name.", We need your crops for the war effort,\" says the soldier.<br><br>Since you have decided not to fight in the war, your crops are needed to support the army.<br>The army does not compensate you for your crops, and they want to take 50% of your stockpile.<br><br>Do you give them the crops?</mark></p>";
-            echo '<form class="form-inline" action="goodfarmer.php" method="get">';
+            echo "<p style='font-size:20px'><mark>You return to your farm and continue to grow crops.<br>It is uneventful and you slowly grow old until you die of old age on the farm.</mark><p>";
+            echo '<form class="form-inline" action="dead.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default">Yes (Give them the Crops)</button></form><br>';
-            echo '<form class="form-inline" action="jail.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<input type="hidden" name="previous" value="farmer">';
-            echo '<button type="submit" class="btn btn-default">No (Keep the Crops)</button></form>';
+            echo '<input type="hidden" name="job" value="farmer">';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
             ?>
             <br>
         </div>
