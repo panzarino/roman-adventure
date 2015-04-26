@@ -37,14 +37,25 @@
     </nav>
     <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/hoe.png" height="100px" width="100px"><br>
+            <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>You continue to grow crops on your farm for years.<br>Nothing important happens, yet you are happy to spend time with your family.<br>You slowly grow old until you die of old age on the farm.</mark><p>";
-            echo '<form class="form-inline" action="dead.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<input type="hidden" name="job" value="farmer">';
-            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
+            $num = rand (1, 4);
+            if ($num===1 || $num===2 || $num===4){
+                echo "<p style='font-size:20px'><mark>Sadly, the emperor does not have a special taste for your grapes.<br>You are able to make a small profit by selling them to poor merchants.</mark></p>";
+                echo '<form class="form-inline" action="grapes2.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            }
+            elseif ($num===3){
+                echo "<p style='font-size:20px'><mark>The emperor loves the grapes that you create.<br>He has personally invited you to work for him in Rome.<br><br>Do you accept?</mark></p>";
+                echo '<form class="form-inline" action="emperorservant.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<button type="submit" class="btn btn-default">Yes (Go to Rome)</button></form><br>';
+                echo '<form class="form-inline" action="farmwar1.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<button type="submit" class="btn btn-default">No (Keep Farming)</button></form>';
+            }
             ?>
             <br>
         </div>

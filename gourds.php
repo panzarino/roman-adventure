@@ -37,14 +37,14 @@
     </nav>
     <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/hoe.png" height="100px" width="100px"><br>
+            <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>You continue to grow crops on your farm for years.<br>Nothing important happens, yet you are happy to spend time with your family.<br>You slowly grow old until you die of old age on the farm.</mark><p>";
-            echo '<form class="form-inline" action="dead.php" method="get">';
+            echo "<p style='font-size:20px'><mark>Growing gourds is easy with all the animals and help that you get from your slaves.<br>You slowly make a profit by selling it to merchants.</mark></p>";
+            echo '<input type="hidden" name="name" id="name" value="'.$name.'">';
+            echo '<form class="form-inline" action="farmwar1.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<input type="hidden" name="job" value="farmer">';
-            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form>';
             ?>
             <br>
         </div>
