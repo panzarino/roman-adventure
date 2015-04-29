@@ -39,7 +39,7 @@
         <div class="text-vertical-center">
             <img src="img/icon.png" height="100px" width="100px">
             <h1>Welcome</h1>
-            <h3><mark>Welcome to Roman Adventure<br><br>Enter your name to get started.</mark></h3>
+            <h3><mark>Welcome to Roman Adventure</mark></h3><br><br><h4><mark><b>Do not hit the back button on your browser or refresh<br><br></b>Hitting the back button or refreshing allows you to replay a scenario or change the situation, which ruins the point of the game.</mark></h4><br><br><h3><mark>Enter your name to get started.</mark></h3>
             <br>
             <form class="form-inline" action="ready.php" method="get">
   <div class="form-group">

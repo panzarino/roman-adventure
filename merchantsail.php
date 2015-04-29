@@ -43,14 +43,19 @@
             $ship = $_GET['ship'];
             $trips = $_GET['trips'];
             $chances = $_GET['odds'];
+            $money = $_GET['money'];
+            $money = intval($money);
             if ($chances==="high"){
-                $odds = rand(1,3);
+                $odds = rand(1,4);
+                $money+=8;
             }
             if ($chances==="medium"){
-                $odds = rand(1,4);
+                $odds = rand(1,5);
+                $money+=5;
             }
             if ($chances==="low"){
-                $odds = rand(1,6);
+                $odds = rand(1,7);
+                $money+=2;
             }
             if ($odds<=2){
                 echo "<p style='font-size:20px'><mark>Pirates attack the ".$ship."!<br>A pirate grabs you and ties you up.<br>\"".$name.", give me all your money\" says the pirate.<br><br>Do you give him the money?</mark></p>";
@@ -67,6 +72,7 @@
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<input type="hidden" name="ship" value="'.$ship.'">';
             echo '<input type="hidden" name="trips" value="'.$trips.'">';
+            echo '<input type="hidden" name="money" value="'.$money.'">';
             echo '<button type="submit" class="btn btn-default">Return Home</button></form><br>';
             }
             ?>

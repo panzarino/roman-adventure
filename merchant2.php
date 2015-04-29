@@ -42,6 +42,11 @@
             $name = $_GET['name'];
             $ship = $_GET['ship'];
             $trips = $_GET['trips'];
+            $money = $_GET['money'];
+            $money = intval($money);
+            if ($money===""){
+                $money = 0;
+            }
             $trips = intval($trips);
             $nexttrip = $trips+1;
             $chances = rand(1,3);
@@ -57,25 +62,28 @@
                     break;
             }
             if ($trips!=5 && $trips!=10){
-            echo "<p style='font-size:20px'><mark>You are ready to take ".$ship." out for a run, but you have to be careful of pirates. The chances of meeting pirates today is ".$odds.".<br><br>Do you want to sail today?</mark></p>";
+            echo "<p style='font-size:20px'><mark>So far you have made ".$money." <i>denarii</i> from your travels.<br><br>You are ready to take ".$ship." out for a run, but you have to be careful of pirates.<br>The chances of meeting pirates today is ".$odds.", but the possible reward is ".$odds.".<br><br>Do you want to sail today?</mark></p>";
             echo '<form class="form-inline" action="merchantsail.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<input type="hidden" name="ship" value="'.$ship.'">';
             echo '<input type="hidden" name="odds" value="'.$odds.'">';
             echo '<input type="hidden" name="trips" value="'.$nexttrip.'">';
+            echo '<input type="hidden" name="money" value="'.$money.'">';
             echo '<button type="submit" class="btn btn-default">Yes</button></form><br>';
             echo '<form class="form-inline" action="merchant2.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<input type="hidden" name="ship" value="'.$ship.'">';
             echo '<input type="hidden" name="trips" value="'.$trips.'">';
+            echo '<input type="hidden" name="money" value="'.$money.'">';
             echo '<button type="submit" class="btn btn-default">No (Try again later)</button></form><br>';
             echo '<form class="form-inline" action="merchant2.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<input type="hidden" name="money" value="'.$money.'">';
             echo '<input type="hidden" name="trips" value="10">';
             echo '<button type="submit" class="btn btn-default">No (I don\'t want to sail again)</button></form><br>';
             }
             elseif ($trips===5){
-                echo "<p style='font-size:20px'><mark>You have been sailing for quite some time now.<br><br>Do you want to settle down as a farmer or continue to sail?</mark></p>";
+                echo "<p style='font-size:20px'><mark>So far you have made ".$money." <i>denarii</i> from your travels.<br><br>You have been sailing for quite some time now.<br><br>Do you want to settle down as a farmer or continue to sail?</mark></p>";
                 echo '<form class="form-inline" action="farmer.php" method="get">';
                 echo '<input type="hidden" name="past" value="merchant">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
@@ -83,10 +91,12 @@
             echo '<form class="form-inline" action="merchant2.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<input type="hidden" name="ship" value="'.$ship.'">';
+            echo '<input type="hidden" name="money" value="'.$money.'">';
+            echo '<input type="hidden" name="trips" value="'.$nexttrip.'">';
             echo '<button type="submit" class="btn btn-default">Keep Sailing</button></form><br>';
             }
             elseif ($trips===10){
-                echo "<p style='font-size:20px'><mark>You have been sailing for quite some time now.<br>You decide to settle down as a farmer.</mark></p>";
+                echo "<p style='font-size:20px'><mark>You have made ".$money." <i>denarii</i> from your travels.<br><br>You have been sailing for quite some time now.<br>You decide to settle down as a farmer.</mark></p>";
                 echo '<form class="form-inline" action="farmer.php" method="get">';
                 echo '<input type="hidden" name="past" value="merchant">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
