@@ -96,7 +96,10 @@
             echo '<button type="submit" class="btn btn-default">Keep Sailing</button></form><br>';
             }
             elseif ($trips===10){
-                echo "<p style='font-size:20px'><mark>You have made ".$money." <i>denarii</i> from your travels.<br><br>You have been sailing for quite some time now.<br>You decide to settle down as a farmer.</mark></p>";
+                if ($money!=0){
+                echo "<p style='font-size:20px'><mark>You have made ".$money." <i>denarii</i> from your travels.</mark></p>";
+                }
+                echo "<br><p style='font-size:20px'><mark>You have been sailing for quite some time now.<br>You decide to settle down as a farmer.</mark></p>";
                 echo '<form class="form-inline" action="farmer.php" method="get">';
                 echo '<input type="hidden" name="past" value="merchant">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
