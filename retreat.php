@@ -35,29 +35,24 @@
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/legion.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/hoe.png" height="100px" width="100px"><br>
+            <img src="img/sword.png" height="100px" width="100px"><br><br>
             <?php
             $name = $_GET['name'];
-            $grapes = $_GET['goodgrapes'];
-            $soldier = $_GET['soldier'];
-            echo "<p style='font-size:20px'><mark>You continue to grow crops on your farm for years.<br>Nothing important happens, yet you are happy to spend time with your family.<br>You slowly grow old until you die of old age on the farm.</mark><p>";
-            echo '<form class="form-inline" action="dead.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            if ($grapes==="yes"){
-                echo '<input type="hidden" name="job" value="grapesfarmer">';
+            $battles = $_GET['battles'];
+            if ($battles===""){
+                $battles=0;
             }
-            elseif ($grapes==="no"){
-                echo '<input type="hidden" name="job" value="badgrapesfarmer">';
+            else{
+                $battles = intval($battles);
             }
-            elseif ($soldier==="yes"){
-                echo '<input type="hidden" name="job" value="goodsoldier">';
-            }
-            else {
-                echo '<input type="hidden" name="job" value="farmer">';
-            }
-            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
+            $battles--;
+                echo "<p style='font-size:20px'><mark>You make it out alive, but some of your men die in the process.</mark></p>";
+                echo '<form class="form-inline" action="battle.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<input type="hidden" name="battles" value="'.$battles.'">';
+                echo '<button type="submit" class="btn btn-default">Continue</button></form>';   
             ?>
             <br>
         </div>
