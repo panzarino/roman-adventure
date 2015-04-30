@@ -25,36 +25,31 @@
         <ul class="sidebar-nav">
             <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
             <li class="sidebar-brand">
-                <a href="#top"  onclick = $("#menu-close").click(); >Roman Adventure</a>
+                <a href="/"  onclick = $("#menu-close").click(); >Roman Adventure</a>
             </li>
             <li>
-                <a href="start.php" onclick = $("#menu-close").click(); >Play</a>
+                <a href="/" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
-                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+                <a href="start.php" onclick = $("#menu-close").click(); >Restart</a>
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/home.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/cerberus.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/icon.png" height="100px" width="100px">
-            <h1>Roman Adventure</h1>
-            <h3><mark>Travel through Rome as a Roman citizen and make decisions that change the game.</mark></h3>
+            <img src="img/skull.png" height="100px" width="100px"><br><br><br>
+            <?php
+            $name = $_GET['name'];
+            $past = $_GET['job'];
+            echo "<p style='font-size:20px'><mark>You enter the underworld as a soul of your former self.<br>First you cross the River Styx to enter the underworld.<br>Then you pass by Cerberus, the three headed dog.</mark></p>";
+            echo '<form class="form-inline" action="dead2.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<input type="hidden" name="job" value="'.$past.'">';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
+            ?>
             <br>
-            <a href="start.php" class="btn btn-dark btn-lg">Play</a>
         </div>
     </header>
-    <aside class="call-to-action bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h3 style="font-size:40px;">About</h3>
-                    <p style="font-size:20px;">Created by <b>Zach Panzarino</b> as a Latin II Project<br><br>The Game Features over 50 different screens, creating countless ways to play.<br>The Project contains over lines of code with  lines being modified in the creation process.<br>Created with <a href="http://php.net/" style="color:#000000;">PHP</a> and <a href="http://getbootstrap.com/" style="color:#000000;">Bootstrap</a> (HTML, CSS, JavaScript)<br><br>Click below to view the source code</p>
-                    <a href="https://github.com/zachpanz88/roman-adventure" class="btn btn-lg btn-dark">Source</a>
-                </div>
-            </div>
-        </div>
-    </aside>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
