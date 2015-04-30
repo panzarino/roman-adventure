@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h3 style="font-size:40px;">About</h3>
-                    <p style="font-size:20px;">Created by <b>Zach Panzarino</b> as a Latin II Project<br><br>The Game Features over 50 different screens, creating countless ways to play.<br>The Project contains over lines of code with  lines being modified in the creation process.<br>Created with <a href="http://php.net/" style="color:#000000;">PHP</a> and <a href="http://getbootstrap.com/" style="color:#000000;">Bootstrap</a> (HTML, CSS, JavaScript)<br><br>Click below to view the source code</p>
+                    <p style="font-size:20px;">Created by <b>Zach Panzarino</b> as a Latin II Project<br><br>The Game Features over 50 dynamic screens, creating countless ways to play.<br>The project contains over 7,000 lines of code.<br>Created with <a href="http://php.net/" style="color:#000000;">PHP</a> and <a href="http://getbootstrap.com/" style="color:#000000;">Bootstrap</a> (HTML, CSS, JavaScript)<br><br>Click below to view the source code</p>
                     <a href="https://github.com/zachpanz88/roman-adventure" class="btn btn-lg btn-dark">Source</a>
                 </div>
             </div>
