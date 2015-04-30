@@ -40,10 +40,19 @@
             <img src="img/hoe.png" height="100px" width="100px"><br>
             <?php
             $name = $_GET['name'];
+            $grapes = $_GET['goodgrapes'];
             echo "<p style='font-size:20px'><mark>You continue to grow crops on your farm for years.<br>Nothing important happens, yet you are happy to spend time with your family.<br>You slowly grow old until you die of old age on the farm.</mark><p>";
             echo '<form class="form-inline" action="dead.php" method="get">';
             echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<input type="hidden" name="job" value="farmer">';
+            if ($grapes==="yes"){
+                echo '<input type="hidden" name="job" value="grapesfarmer">';
+            }
+            elseif ($grapes==="no"){
+                echo '<input type="hidden" name="job" value="badgrapesfarmer">';
+            }
+            else {
+                echo '<input type="hidden" name="job" value="farmer">';
+            }
             echo '<button type="submit" class="btn btn-default">Continue</button></form><br>';
             ?>
             <br>

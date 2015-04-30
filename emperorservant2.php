@@ -35,21 +35,18 @@
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/legion.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/sword.png" height="100px" width="100px"><br><br>
+            <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>It's time for your first battle.<br><br>Choose your weapon.</mark></p>";
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Gladius</i> (Sword)</button></form><br>';
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Pilum</i> (Javelin)</button></form><br>';
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Hasta</i> (Spear)</button></form><br>';
+                echo "<p style='font-size:20px'><mark>Now you need to choose what to grow grapes for. Do you want to make a vineyard for the emperor's wine or continue to grow normal grapes?</mark></p>";
+                echo '<form class="form-inline" action="emperorservantwine.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<button type="submit" class="btn btn-default">Vineyard</button></form><br>';
+                echo '<form class="form-inline" action="emperorservantgrapes.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<button type="submit" class="btn btn-default">Grapes</button></form>';
             ?>
             <br>
         </div>

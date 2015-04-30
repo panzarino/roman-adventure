@@ -35,21 +35,33 @@
             </li>
         </ul>
     </nav>
-    <header id="top" class="header" style="background: url(img/legion.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
+    <header id="top" class="header" style="background: url(img/farmer.jpg) no-repeat center center scroll;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;">
         <div class="text-vertical-center">
-            <img src="img/sword.png" height="100px" width="100px"><br><br>
+            <img src="img/hoe.png" height="100px" width="100px">
             <?php
             $name = $_GET['name'];
-            echo "<p style='font-size:20px'><mark>It's time for your first battle.<br><br>Choose your weapon.</mark></p>";
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Gladius</i> (Sword)</button></form><br>';
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Pilum</i> (Javelin)</button></form><br>';
-            echo '<form class="form-inline" action="firstbattle.php" method="get">';
-            echo '<input type="hidden" name="name" value="'.$name.'">';
-            echo '<button type="submit" class="btn btn-default"><i>Hasta</i> (Spear)</button></form><br>';
+            $odds = rand(1,6);
+            if ($odds===1||$odds===2||$odds===3){
+                echo "<p style='font-size:20px'><mark>The emperor catches you trying to poison his wine. You are put to death for treason.</mark></p>";
+                echo '<form class="form-inline" action="dead.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<input type="hidden" name="job" value="treason">';
+                echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            }
+            elseif ($odds===4||$odds===5){
+                echo "<p style='font-size:20px'><mark>You successfully poison the emperor.<br>However, his guards know that you are the creator of the wine that he drank.<br>You are put to death for treason.</mark></p>";
+                echo '<form class="form-inline" action="dead.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<input type="hidden" name="job" value="treason">';
+                echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            }
+            else{
+                echo "<p style='font-size:20px'><mark>You successfully poison the emperor.<br>You escape from the city as fast as you can.<br>You return to a farm, and no one ever finds out that you were the one who poisoned the emperor.</mark></p>";
+                echo '<form class="form-inline" action="goodfarmer.php" method="get">';
+                echo '<input type="hidden" name="name" value="'.$name.'">';
+                echo '<input type="hidden" name="goodgrapes" value="no">';
+                echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            }
             ?>
             <br>
         </div>
