@@ -78,6 +78,12 @@
             echo '<input type="hidden" name="name" value="'.$name.'">';
             echo '<button type="submit" class="btn btn-default">Continue</button></form>';
             }
+            elseif ($past==="merchant"){
+                echo "\"I was a merchant. I refused to give pirates money and I was killed for it.\"<br>\"Step right this way\"</mark></p>";
+                echo '<form class="form-inline" action="asphodel.php" method="get">';
+            echo '<input type="hidden" name="name" value="'.$name.'">';
+            echo '<button type="submit" class="btn btn-default">Continue</button></form>';
+            }
             ?>
             <br>
         </div>
